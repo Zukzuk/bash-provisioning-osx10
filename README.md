@@ -83,6 +83,6 @@ Only tested on my own macbook, with OSX Yosemite 10.10.5
  - [Karma](https://www.npmjs.com/package/karma)
  - [Protractor](https://www.npmjs.com/package/protractor)
 
-#### Manual install
+#### Manually installed
 
- - [Transmission](http://download.transmissionbt.com/files/Transmission-2.84.dmg)
+ - [Transmission](http://download.transmissionbt.com)
