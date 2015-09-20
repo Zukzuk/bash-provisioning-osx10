@@ -51,6 +51,8 @@ cd $BASE
 
 
 ## Update XCode
+printf "\n\e[35mInstall XCode and all other AppStore apps now\e[0m...\n"
+read -p "Press [Enter] to continue..."
 printf "\n\e[35mUpdating XCode\e[0m:\n"
 xcode-select --install
 
@@ -262,7 +264,5 @@ app_install "$APP_Transmission" "$DMG_Transmission" "$VOL_Transmission"
 # download "$DMG_Vagrant" "$URL_Vagrant"
 # declare -a commands=("hdiutil mount \"$DMG_Vagrant\"" "installer -verboseR -pkg \"$VOL_Vagrant/Install $PKG_Vagrant\" -target /" "hdiutil unmount \"$VOL_Vagrant\"")
 # app_install "$APP_Vagrant" "commands"
-
-printf "\n\e[35mInstall all Apple AppStore apps now\e[0m...\n"
 
 
