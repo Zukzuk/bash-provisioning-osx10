@@ -29,13 +29,13 @@ Only tested on my own macbook, with OSX Yosemite 10.10.5
 
 #### Casks
 
- - Java
- - Little snitch
- - Google Chrome
- - Google Chrome Canary
- - Chrome Remote Desktop
- - Mozilla Firefox
- - Mozilla Firefox Developers Edition
+ - [Java](https://www.java.com/en/download/)
+ - [Little Snitch](https://www.obdev.at/products/littlesnitch/index.html)
+ - [Google Chrome](https://www.google.nl/chrome/browser/desktop/)
+ - [Google Chrome Canary](https://www.google.nl/chrome/browser/canary.html)
+ - [Chrome Remote Desktop](https://chrome.google.com/webstore/detail/chrome-remote-desktop/gbchcmhmhahfdphkhkmpfmihenigjmpp?hl=nl)
+ - [Mozilla Firefox](https://www.mozilla.org/nl/firefox/new/)
+ - [Mozilla Firefox Developers Edition](https://www.mozilla.org/nl/firefox/developer/)
  - Opera
  - iTerm2
  - Sublime Text 3
