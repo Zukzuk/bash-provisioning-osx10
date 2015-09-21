@@ -25,18 +25,30 @@ if [[ $REPLY =~ ^[Yy]$ ]]
 fi
 
 
+## Check OS Version
+TARGET_MAC_VERSION="10.10"
+MAJOR_MAC_VERSION=$(sw_vers -productVersion | awk -F '.' '{print $1 "." $2}')
+if [ ! $MAJOR_MAC_VERSION == $TARGET_MAC_VERSION ]; then
+  printf "\n\e[35mYou are running MacOS $MAJOR_MAC_VERSION, which should be MacOS $TARGET_MAC_VERSION. Please upgrade before provisioning\e[0m!\n"
+  read -p "Press [Enter] to exit..."
+  exit
+fi
+
+
 ## Folders
 BASE=~/Documents/provisioning
 APPS=~/Applications
 NODE_MODULES=/usr/local/lib/node_modules
 
 
-## Provisioning MacZukzuk
+## Provisioning
 # Check versions
-printf "\n\e[35mOSX native installs\e[0m:\n"
+printf "\n\e[35mOSX $MAJOR_MAC_VERSION pre-installs\e[0m:\n"
 python --version
 ruby --version
 gem --version | sed "s/^/gem /"
+# Set show all files
+defaults write com.apple.finder AppleShowAllFiles YES
 # Create provisioning dir
 printf "\n\e[35mCreate provisioning dir\e[0m:\n"
 cd ~/Documents
@@ -226,7 +238,7 @@ function app_download {
 function app_install {
   if [ ! -f "$APPS/$1" ] && [ ! -d "$APPS/$1" ]
   then
-    declare -a commands=("hdiutil mount $2" "cp -R -L \"$3/$1\" $APPS/" "hdiutil unmount \"$3\"")
+    declare -a commands=("hdiutil mount \"$2\"" "cp -R -L \"$3/$1\" $APPS/" "hdiutil unmount \"$3\"")
     loop "commands"
   else
     printf "\e[33m\e[4mWarning\e[0m: $1 already installed\n"
@@ -247,6 +259,7 @@ VOL_Transmission="/Volumes/Transmission"
 APP_Transmission="Transmission.app"
 app_download "$DMG_Transmission" "$URL_Transmission"
 app_install "$APP_Transmission" "$DMG_Transmission" "$VOL_Transmission"
+
 
 # ## Install ZIP manually
 # printf "\n\e[35mInstalling applications\e[0m:\n"
