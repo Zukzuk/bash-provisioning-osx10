@@ -33,6 +33,8 @@ if [ ! $MAJOR_MAC_VERSION == $TARGET_MAC_VERSION ]; then
   read -p "Press [Enter] to exit..."
   exit
 fi
+## Set show all files
+defaults write com.apple.finder AppleShowAllFiles YES
 
 
 # Folders
@@ -48,8 +50,7 @@ python --version
 ruby --version
 curl --version
 gem --version | sed "s/^/Gem /"
-## Set show all files
-defaults write com.apple.finder AppleShowAllFiles YES
+openssl version
 ## Create provisioning dir
 printf "\n\e[35mCreate provisioning dir\e[0m:\n"
 cd ~/Documents
@@ -68,6 +69,11 @@ printf "\n\e[35mInstall XCode and all other AppStore apps now\e[0m...\n"
 read -p "Press [Enter] to continue..."
 printf "\n\e[35mUpdating XCode\e[0m:\n"
 xcode-select --install
+
+
+# Ruby Gems
+printf "\n\e[35mInstalling gems\e[0m:\n"
+sudo gem install rails
 
 
 # Python Pip

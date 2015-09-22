@@ -15,9 +15,26 @@ Only tested on my own macbook, with OSX Yosemite 10.10.5
  - APPS=~/Applications
  - NODE_MODULES=/usr/local/lib/node_modules
 
+#### Supposed pre-installed MacOSX packages
+
+ - [Python](https://www.python.org/)
+ - [Ruby](https://www.ruby-lang.org/en/)
+ - [CURL](http://curl.haxx.se/docs/manpage.html)
+ - [Gem](https://rubygems.org/)
+ - [OpenSSL](https://www.openssl.org/)
+
+#### XCode
+
+ - [XCode](https://developer.apple.com/xcode/) should be installed through the AppStore. 
+ This script will run updates for you.
+
 #### ZSH
 
  - [Oh My Zsh](http://ohmyz.sh/)
+
+### Reuby gems
+
+ - [Rails](http://rubyonrails.org/)
 
 #### Python Pip
 
