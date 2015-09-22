@@ -8,7 +8,7 @@
 clear
 
 
-## Setup .bash_profile
+# Setup .bash_profile
 if [ ! -f "~/.bash_profile" ]; then
   touch ~/.bash_profile
 fi
@@ -25,7 +25,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]
 fi
 
 
-## Check OS Version
+# Check OS Version
 TARGET_MAC_VERSION="10.10"
 MAJOR_MAC_VERSION=$(sw_vers -productVersion | awk -F '.' '{print $1 "." $2}')
 if [ ! $MAJOR_MAC_VERSION == $TARGET_MAC_VERSION ]; then
@@ -35,21 +35,22 @@ if [ ! $MAJOR_MAC_VERSION == $TARGET_MAC_VERSION ]; then
 fi
 
 
-## Folders
+# Folders
 BASE=~/Documents/provisioning
 APPS=~/Applications
 NODE_MODULES=/usr/local/lib/node_modules
 
 
-## Provisioning
-# Check versions
+# Provisioning
+## Check versions
 printf "\n\e[35mOSX $MAJOR_MAC_VERSION pre-installs\e[0m:\n"
 python --version
 ruby --version
-gem --version | sed "s/^/gem /"
-# Set show all files
+curl --version
+gem --version | sed "s/^/Gem /"
+## Set show all files
 defaults write com.apple.finder AppleShowAllFiles YES
-# Create provisioning dir
+## Create provisioning dir
 printf "\n\e[35mCreate provisioning dir\e[0m:\n"
 cd ~/Documents
 if [ ! -d "provisioning" ]
@@ -62,118 +63,120 @@ fi
 cd $BASE
 
 
-## Update XCode
+# Update XCode
 printf "\n\e[35mInstall XCode and all other AppStore apps now\e[0m...\n"
 read -p "Press [Enter] to continue..."
 printf "\n\e[35mUpdating XCode\e[0m:\n"
 xcode-select --install
 
 
-## Python Pip
+# Python Pip
 printf "\n\e[35mInstalling pips\e[0m:\n"
-# Ansible
+## Ansible
 sudo easy_install pip
 sudo pip install ansible
 
 
-## Homebrew 
+# Homebrew 
 printf "\n\e[35mInstalling brews\e[0m:\n"
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew update && brew upgrade && brew doctor
-# Git
+## Git
 brew install git
-# Wget
+## Wget
 brew install wget
-# Postgresql
+## Postgresql
 brew install postgresql
-# NodeJS
+## NodeJS
 brew install homebrew/versions/node012
-# Docker
+## Docker
 brew install docker
 brew install boot2docker
 
 
-## Casks
+# Casks
 printf "\n\e[35mInstalling casks\e[0m:\n"
 brew install caskroom/cask/brew-cask
 brew upgrade brew-cask
 brew tap caskroom/versions
-# Java
+## Java
 brew cask install java
-# Little snitch
+## Little snitch
 brew cask install little-snitch
-# Google Chrome
+## Google Chrome
 brew cask install google-chrome
 brew cask install google-chrome-canary
 brew cask install chrome-remote-desktop-host
-# Mozilla Firefox
+## Mozilla Firefox
 brew cask install firefox
 brew cask install firefoxdeveloperedition
-# Opera
+## Opera
 brew cask install opera
-# iTerm2
+## iTerm2
 brew cask install iterm2
 printf "\e[36mHint\e[0m: Setup 'word-skipping', see http://stackoverflow.com/questions/81272/is-there-any-way-in-the-os-x-terminal-to-move-the-cursor-word-by-word\n"
-# Sublime Text 3
+## Sublime Text 3
 brew cask install sublime-text3
-# Symlink subl to open files from terminal
+## Symlink subl to open files from terminal
 if [ ! -f "/usr/local/bin/subl" ]
   then 
 	ln -s "~/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl 
 fi
-# Atom
+## Atom
 brew cask install atom
-# Light-table
+## Light-table
 brew cask install lighttable
-# WebStorm
+## WebStorm
 brew cask install webstorm
-# pycharm
+## pycharm
 brew cask install pycharm
-# PHPStorm
+## PHPStorm
 brew cask install phpstorm
-# MacVim
+## MacVim
 brew cask install macvim
-# Charles
+## Charles
 brew cask install charles
-# Vagrant
+## Vagrant
 brew cask install vagrant
 printf "\e[36mHint\e[0m: Setup IE vm's, see https://dev.modern.ie/tools/vms/mac/\n"
-# Jenkins
+## Jenkins
 brew cask install jenkins
 printf "\e[36mHint\e[0m: Runs Jenkins on http://localhost:8080/\n"
-# SourceTree
+## SourceTree
 brew cask install sourcetree
-# VirtualBox
+## VirtualBox
 brew cask install virtualbox
-# GitHub
+## GitHub
 brew cask install github-desktop
-# Heroku
+## Heroku
 brew cask install heroku-toolbelt
-# Transmit
+## Transmit
 brew cask install transmit
-# Sequel pro
+## Sequel pro
 brew cask install sequel-pro
-# VLC
+## VLC
 brew cask install vlc
-# Handbrake
+## UnArchiver
+brew cask install the-unarchiver
+## Handbrake
 brew cask install handbrake
-# Skype
+## Skype
 brew cask install skype
-# Spotify
+## Spotify
 brew cask install spotify
-# MS Office
+## MS Office
 brew cask install microsoft-office
-# Clean my mac
+## Clean my mac
 brew cask install cleanmymac
 
 
-## Brewery cleanup
+# Brewery cleanup
 brew cleanup && brew cask cleanup
 
 
-## NPM
+# NPM
 printf "\n\e[35mInstalling node packages\e[0m:\n"
-# Helper functions
+## Helper functions
 function npm_install {
   if [ ! -f "$NODE_MODULES/$1" ] && [ ! -d "$NODE_MODULES/$1" ]
   then
@@ -183,48 +186,48 @@ function npm_install {
   fi
 }
 ls $NODE_MODULES
-# Express
+## Express
 npm_install "express"
-# Lodash
+## Lodash
 npm_install "lodash"
-# Socket-io
+## Socket-io
 npm_install "socket.io"
-# Mongoose
+## Mongoose
 npm_install "mongoose"
-# Webpack
+## Webpack
 npm_install "webpack"
-# Chalk
+## Chalk
 npm_install "chalk"
-# Q
+## Q
 npm_install "q"
-# Hapi
+## Hapi
 npm_install "hapi"
-# Redis
+## Redis
 npm_install "redis"
-# Asyc
+## Asyc
 npm_install "async"
-# Forever
+## Forever
 npm_install "forever"
-# CSurf
+## CSurf
 npm_install "csurf"
-# Gulp
+## Gulp
 npm_install "gulp"
 npm_install "gulp-cli"
-# Grunt
+## Grunt
 npm_install "grunt"
 npm_install "grunt-cli"
-# Bower
+## Bower
 npm_install "bower"
-# Karma
+## Karma
 npm_install "karma"
 npm_install "karma-cli"
-# Protractor
+## Protractor
 npm_install "protractor"
 
 
-## Manual install
+# Manual install
 printf "\n\e[35mInstalling manually\e[0m:\n"
-# Helper functions
+## Helper functions
 function app_download {
   if [ ! -f "$1" ] && [ ! -d "$1" ]
   then
@@ -252,13 +255,18 @@ function loop {
     eval $i
   done
 }
-# Transmission
+## Transmission
 URL_Transmission="http://download.transmissionbt.com/files"
 DMG_Transmission="Transmission-2.84.dmg"
 VOL_Transmission="/Volumes/Transmission"
 APP_Transmission="Transmission.app"
 app_download "$DMG_Transmission" "$URL_Transmission"
 app_install "$APP_Transmission" "$DMG_Transmission" "$VOL_Transmission"
+
+
+# Install zshell (oh my zsh)
+printf "\n\e[35mInstalling oh my zsh\e[0m:\n"
+curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 
 
 # ## Install ZIP manually
