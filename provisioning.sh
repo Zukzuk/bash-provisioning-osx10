@@ -17,11 +17,13 @@ printf "\e[36mHint\e[0m: Setup terminal colors, see http://misc.flogisoft.com/ba
 printf "\e[36mHint\e[0m: Setup bash_profile, see provisioning.bash_profile.txt\n"
 printf "\e[41mThis will overwrite your current ~/.bash_profile!\e[0m\n"
 read -p "Are you sure?" -n 1 -r
-echo    # (optional) move to a new line
+echo
 if [[ $REPLY =~ ^[Yy]$ ]]
   then
     cat "provisioning.bash_profile.txt" > $bashprofile
     source $bashprofile
+  else
+    printf "\e[36mSkipping ~/.bash_profile\e[0m...\n"
 fi
 
 
@@ -73,7 +75,7 @@ xcode-select --install
 
 # Ruby Gems
 printf "\n\e[35mInstalling gems\e[0m:\n"
-sudo gem install rails
+sudo gem install rails --no-rdoc --no-ri
 
 
 # Python Pip
@@ -208,8 +210,8 @@ npm_install "chalk"
 npm_install "q"
 ## Hapi
 npm_install "hapi"
-## Redis
-npm_install "redis"
+## Phantomjs
+npm_install "phantomjs"
 ## Asyc
 npm_install "async"
 ## Forever
