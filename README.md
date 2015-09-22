@@ -1,7 +1,7 @@
 # bash-provisioning-osx10
 An idempotent bash provisioning script that will transform your mac into a developer's powerhouse.
 
-# Run
+## Run
 Simply run ```bash provisioning.sh``` in your terminal and watch it goooooooo. 
 You can also run ```source provisioning.sh``` to immediatley source the new bash_profile into the terminal instance.
 
@@ -32,7 +32,7 @@ Only tested on my own macbook, with OSX Yosemite 10.10.5
 
  - [Oh My Zsh](http://ohmyz.sh/)
 
-### Ruby gems
+#### Ruby Gems
 
  - [Rails](http://rubyonrails.org/)
 
@@ -40,7 +40,7 @@ Only tested on my own macbook, with OSX Yosemite 10.10.5
 
  - [Ansible](http://docs.ansible.com/ansible/)
 
-#### Homebrew
+#### Homebrews
 
  - [Git](https://help.github.com/articles/good-resources-for-learning-git-and-github/)
  - [Wget](http://www.gnu.org/software/wget/)
@@ -48,8 +48,7 @@ Only tested on my own macbook, with OSX Yosemite 10.10.5
  - [NodeJS](https://nodejs.org/en/)
  - [Docker](https://www.docker.com/)
 
-
-#### Casks
+#### Homebrew casks
 
  - [Java](https://www.java.com/en/download/)
  - [Little Snitch](https://www.obdev.at/products/littlesnitch/index.html)
@@ -84,7 +83,7 @@ Only tested on my own macbook, with OSX Yosemite 10.10.5
  - [MS Office](https://products.office.com/nl-nl/home)
  - [Clean My Mac](http://macpaw.com/cleanmymac)
 
-#### NPM
+#### NPM packages
 
  - [Express](https://www.npmjs.com/package/express)
  - [Lodash](https://www.npmjs.com/package/lodash)
@@ -109,6 +108,6 @@ Only tested on my own macbook, with OSX Yosemite 10.10.5
  - [Protractor](https://www.npmjs.com/package/protractor)
  - [Babel](https://www.npmjs.com/package/babel)
 
-#### Manually installed
+#### Scripted installs
 
  - [Transmission](http://download.transmissionbt.com)
