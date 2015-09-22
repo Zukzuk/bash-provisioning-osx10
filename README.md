@@ -32,7 +32,7 @@ Only tested on my own macbook, with OSX Yosemite 10.10.5
 
  - [Oh My Zsh](http://ohmyz.sh/)
 
-### Reuby gems
+### Ruby gems
 
  - [Rails](http://rubyonrails.org/)
 
