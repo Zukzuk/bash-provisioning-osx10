@@ -94,6 +94,7 @@ Only tested on my own macbook, with OSX Yosemite 10.10.5
  - [Chalk](https://www.npmjs.com/package/chalk)
  - [Q](https://www.npmjs.com/package/q)
  - [Hapi](https://www.npmjs.com/package/hapi)
+ - [Phantomjs](https://www.npmjs.com/package/phantomjs)
  - [Redis](https://www.npmjs.com/package/mongoose)
  - [Asyc](https://www.npmjs.com/package/async)
  - [Forever](https://www.npmjs.com/package/forever)
@@ -104,7 +105,9 @@ Only tested on my own macbook, with OSX Yosemite 10.10.5
  - [Grunt-cli](https://www.npmjs.com/package/grunt-cli)
  - [Bower](https://www.npmjs.com/package/bower)
  - [Karma](https://www.npmjs.com/package/karma)
+ - [Karma-cli](https://www.npmjs.com/package/karma-cli)
  - [Protractor](https://www.npmjs.com/package/protractor)
+ - [Babel](https://www.npmjs.com/package/babel)
 
 #### Manually installed
 

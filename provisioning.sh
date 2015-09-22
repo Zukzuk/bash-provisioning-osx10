@@ -229,6 +229,8 @@ npm_install "karma"
 npm_install "karma-cli"
 ## Protractor
 npm_install "protractor"
+## Babel
+npm_install "babel"
 
 
 # Manual install
