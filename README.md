@@ -39,6 +39,7 @@ Only tested on my own macbook, with OSX Yosemite 10.10.5
 #### Python Pip
 
  - [Ansible](http://docs.ansible.com/ansible/)
+ - [TheFuck](https://github.com/nvbn/thefuck)
 
 #### Homebrews
 

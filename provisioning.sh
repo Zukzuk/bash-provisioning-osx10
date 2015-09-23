@@ -83,6 +83,7 @@ printf "\n\e[35mInstalling pips\e[0m:\n"
 ## Ansible
 sudo easy_install pip
 sudo pip install ansible
+sudo pip install thefuck
 
 
 # Homebrew 
