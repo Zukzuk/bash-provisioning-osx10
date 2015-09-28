@@ -8,6 +8,13 @@
 clear
 
 
+# Constants
+BASE=~/Documents/provisioning
+APPS=~/Applications
+NODE_MODULES=/usr/local/lib/node_modules
+TARGET_MAC_VERSION="10.10"
+
+
 # Setup .bash_profile
 if [ ! -f "~/.bash_profile" ]; then
   touch ~/.bash_profile
@@ -27,8 +34,6 @@ if [[ $REPLY =~ ^[Yy]$ ]]
 fi
 
 
-# Check OS Version
-TARGET_MAC_VERSION="10.10"
 MAJOR_MAC_VERSION=$(sw_vers -productVersion | awk -F '.' '{print $1 "." $2}')
 if [ ! $MAJOR_MAC_VERSION == $TARGET_MAC_VERSION ]; then
   printf "\n\e[35mYou are running MacOS $MAJOR_MAC_VERSION, which should be MacOS $TARGET_MAC_VERSION. Please upgrade before provisioning\e[0m!\n"
@@ -37,12 +42,6 @@ if [ ! $MAJOR_MAC_VERSION == $TARGET_MAC_VERSION ]; then
 fi
 ## Set show all files
 defaults write com.apple.finder AppleShowAllFiles YES
-
-
-# Folders
-BASE=~/Documents/provisioning
-APPS=~/Applications
-NODE_MODULES=/usr/local/lib/node_modules
 
 
 # Provisioning
@@ -163,6 +162,8 @@ brew cask install heroku-toolbelt
 brew cask install transmit
 ## Sequel pro
 brew cask install sequel-pro
+## Inky
+brew cask install inky
 ## VLC
 brew cask install vlc
 ## UnArchiver

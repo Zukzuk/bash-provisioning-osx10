@@ -77,6 +77,7 @@ Only tested on my own macbook, with OSX Yosemite 10.10.5
  - [Transmit](https://panic.com/transmit/)
  - [Sequel pro](http://www.sequelpro.com/)
  - [VLC](http://www.videolan.org/vlc/)
+ - [Inky](http://inky.com/)
  - [The Unarchiver](http://unarchiver.c3.cx/unarchiver)
  - [Handbrake](https://handbrake.fr/)
  - [Skype](http://www.skype.com/nl/)
