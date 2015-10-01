@@ -7,12 +7,44 @@
 
 clear
 
+printf '
+                                          Thank you for trying:
+\e[36m
+                         _______  __   __  ___   _  _______  __   __  ___   _                                
+                        |       ||  | |  ||   | | ||       ||  | |  ||   | | |                               
+                        |____   ||  | |  ||   |_| ||____   ||  | |  ||   |_| |                               
+                         ____|  ||  |_|  ||      _| ____|  ||  |_|  ||      _|                               
+                        | ______||       ||     |_ | ______||       ||     |_                                
+                        | |_____ |       ||    _  || |_____ |       ||    _  |                               
+                        |_______||_______||___| |_||_______||_______||___| |_| \e[0m                              
+   _______  ______    _______  __   __  ___   _______  ___   _______  __    _  ___   __    _  _______        
+  |       ||    _ |  |       ||  | |  ||   | |       ||   | |       ||  |  | ||   | |  |  | ||       |       
+  |    _  ||   | ||  |   _   ||  |_|  ||   | |  _____||   | |   _   ||   |_| ||   | |   |_| ||    ___|       
+  |   |_| ||   |_||_ |  | |  ||       ||   | | |_____ |   | |  | |  ||       ||   | |       ||   | __        
+  |    ___||    __  ||  |_|  ||       ||   | |_____  ||   | |  |_|  ||  _    ||   | |  _    ||   ||  |       
+  |   |    |   |  | ||       | |     | |   |  _____| ||   | |       || | |   ||   | | | |   ||   |_| |       
+  |___|    |___|  |_||_______|  |___|  |___| |_______||___| |_______||_|  |__||___| |_|  |__||_______|       
+   ___   __    _  _______  _______  ______    _______  _______  ______    _______  _______  _______  ______  
+  |   | |  |  | ||       ||       ||    _ |  |       ||       ||    _ |  |   _   ||       ||       ||      | 
+  |   | |   |_| ||       ||   _   ||   | ||  |    _  ||   _   ||   | ||  |  |_|  ||_     _||    ___||  _    |
+  |   | |       ||       ||  | |  ||   |_||_ |   |_| ||  | |  ||   |_||_ |       |  |   |  |   |___ | | |   |
+  |   | |  _    ||      _||  |_|  ||    __  ||    ___||  |_|  ||    __  ||       |  |   |  |    ___|| |_|   |
+  |   | | | |   ||     |_ |       ||   |  | ||   |    |       ||   |  | ||   _   |  |   |  |   |___ |       |
+  |___| |_|  |__||_______||_______||___|  |_||___|    |_______||___|  |_||__| |__|  |___|  |_______||______| 
+
+
+                                      "All your provisioning provided"
+
+'
+
 
 # Constants
 BASE=~/Documents/provisioning
 APPS=~/Applications
 NODE_MODULES=/usr/local/lib/node_modules
-TARGET_MAC_VERSION="10.10"
+TARGET_MAC_VERSION=10
+TARGET_MAC_RELEASE=10
+
 
 
 # Setup .bash_profile
@@ -21,8 +53,8 @@ if [ ! -f "~/.bash_profile" ]; then
 fi
 bashprofile=~/.bash_profile
 printf "\e[36mHint\e[0m: Setup terminal colors, see http://misc.flogisoft.com/bash/tip_colors_and_formatting\n"
-printf "\e[36mHint\e[0m: Setup bash_profile, see provisioning.bash_profile.txt\n"
-printf "\e[41mThis will overwrite your current ~/.bash_profile!\e[0m\n"
+printf "\e[36mHint\e[0m: Setup bash_profile, see provisioning.bash_profile.txt\n\n"
+printf "\e[41mThis will overwrite your current ~/.bash_profile!\e[0m\n\n"
 read -p "Are you sure?" -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
@@ -34,12 +66,14 @@ if [[ $REPLY =~ ^[Yy]$ ]]
 fi
 
 
-MAJOR_MAC_VERSION=$(sw_vers -productVersion | awk -F '.' '{print $1 "." $2}')
-if [ ! $MAJOR_MAC_VERSION == $TARGET_MAC_VERSION ]; then
-  printf "\n\e[35mYou are running MacOS $MAJOR_MAC_VERSION, which should be MacOS $TARGET_MAC_VERSION. Please upgrade before provisioning\e[0m!\n"
+MAJOR_MAC_VERSION=$(($(sw_vers -productVersion | awk -F '.' '{print $1}')+0))
+MAJOR_MAC_RELEASE=$(($(sw_vers -productVersion | awk -F '.' '{print $2}')+0))
+if [ $TARGET_MAC_VERSION -gt $MAJOR_MAC_VERSION ] || [ $TARGET_MAC_RELEASE -gt $MAJOR_MAC_RELEASE ]; then
+  printf "\n\e[35mYou are running MacOS $MAJOR_MAC_VERSION.$MAJOR_MAC_RELEASE, which should be MacOS $TARGET_MAC_VERSION.$TARGET_MAC_RELEASE. Please upgrade before provisioning\e[0m!\n"
   read -p "Press [Enter] to exit..."
   exit
 fi
+printf "\n\e[35mYou are running MacOS $MAJOR_MAC_VERSION.$MAJOR_MAC_RELEASE, compatibale with the target MacOS ($TARGET_MAC_VERSION.$TARGET_MAC_RELEASE)\e[0m!\n"
 ## Set show all files
 defaults write com.apple.finder AppleShowAllFiles YES
 
@@ -277,6 +311,36 @@ app_install "$APP_Transmission" "$DMG_Transmission" "$VOL_Transmission"
 # Install zshell (oh my zsh)
 printf "\n\e[35mInstalling oh my zsh\e[0m:\n"
 curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+upgrade_oh_my_zsh
+
+printf '
+                                          Thank you for using
+
+                         _______  __   __  ___   _  _______  __   __  ___   _                                
+                        |       ||  | |  ||   | | ||       ||  | |  ||   | | |                               
+                        |____   ||  | |  ||   |_| ||____   ||  | |  ||   |_| |                               
+                         ____|  ||  |_|  ||      _| ____|  ||  |_|  ||      _|                               
+                        | ______||       ||     |_ | ______||       ||     |_                                
+                        | |_____ |       ||    _  || |_____ |       ||    _  |                               
+                        |_______||_______||___| |_||_______||_______||___| |_|                               
+   _______  ______    _______  __   __  ___   _______  ___   _______  __    _  ___   __    _  _______        
+  |       ||    _ |  |       ||  | |  ||   | |       ||   | |       ||  |  | ||   | |  |  | ||       |       
+  |    _  ||   | ||  |   _   ||  |_|  ||   | |  _____||   | |   _   ||   |_| ||   | |   |_| ||    ___|       
+  |   |_| ||   |_||_ |  | |  ||       ||   | | |_____ |   | |  | |  ||       ||   | |       ||   | __        
+  |    ___||    __  ||  |_|  ||       ||   | |_____  ||   | |  |_|  ||  _    ||   | |  _    ||   ||  |       
+  |   |    |   |  | ||       | |     | |   |  _____| ||   | |       || | |   ||   | | | |   ||   |_| |       
+  |___|    |___|  |_||_______|  |___|  |___| |_______||___| |_______||_|  |__||___| |_|  |__||_______|       
+   ___   __    _  _______  _______  ______    _______  _______  ______    _______  _______  _______  ______  
+  |   | |  |  | ||       ||       ||    _ |  |       ||       ||    _ |  |   _   ||       ||       ||      | 
+  |   | |   |_| ||       ||   _   ||   | ||  |    _  ||   _   ||   | ||  |  |_|  ||_     _||    ___||  _    |
+  |   | |       ||       ||  | |  ||   |_||_ |   |_| ||  | |  ||   |_||_ |       |  |   |  |   |___ | | |   |
+  |   | |  _    ||      _||  |_|  ||    __  ||    ___||  |_|  ||    __  ||       |  |   |  |    ___|| |_|   |
+  |   | | | |   ||     |_ |       ||   |  | ||   |    |       ||   |  | ||   _   |  |   |  |   |___ |       |
+  |___| |_|  |__||_______||_______||___|  |_||___|    |_______||___|  |_||__| |__|  |___|  |_______||______| 
+
+
+                                      "All your provisioning provided"
+'
 
 
 # ## Install ZIP manually
