@@ -46,26 +46,6 @@ TARGET_MAC_VERSION=10
 TARGET_MAC_RELEASE=10
 
 
-
-# Setup .bash_profile
-if [ ! -f "~/.bashrc" ]; then
-  touch ~/.bashrc
-fi
-bashrc=~/.bashrc
-printf "\e[36mHint\e[0m: Setup terminal colors, see http://misc.flogisoft.com/bash/tip_colors_and_formatting\n"
-printf "\e[36mHint\e[0m: Setup .bashrc, see provisioning.bashrc.txt\n\n"
-printf "\e[41mThis will overwrite your current ~/.bashrc!\e[0m\n\n"
-read -p "Are you sure?" -n 1 -r
-echo
-if [[ $REPLY =~ ^[Yy]$ ]]
-  then
-    cat "provisioning.bashrc.txt" > $bashrc
-    source $bashrc
-  else
-    printf "\e[36mSkipping ~/.bashrc\e[0m...\n"
-fi
-
-
 MAJOR_MAC_VERSION=$(($(sw_vers -productVersion | awk -F '.' '{print $1}')+0))
 MAJOR_MAC_RELEASE=$(($(sw_vers -productVersion | awk -F '.' '{print $2}')+0))
 if [ $TARGET_MAC_VERSION -gt $MAJOR_MAC_VERSION ] || [ $TARGET_MAC_RELEASE -gt $MAJOR_MAC_RELEASE ]; then
@@ -100,8 +80,8 @@ cd $BASE
 
 
 # Update XCode
-printf "\n\e[35mInstall XCode and all other AppStore apps now\e[0m...\n"
-read -p "Press [Enter] to continue..."
+printf "\n\e[35mInstall XCode and all other AppStore apps manually\e[0m...\n"
+read -p "Press [Enter] to continue when you're done..."
 printf "\n\e[35mUpdating XCode\e[0m:\n"
 xcode-select --install
 
@@ -311,6 +291,28 @@ app_install "$APP_Transmission" "$DMG_Transmission" "$VOL_Transmission"
 # Install zshell (oh my zsh)
 printf "\n\e[35mInstalling oh my zsh\e[0m:\n"
 curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+zsh
+
+
+# Setup ~/.*rc
+if [ ! -f "~/.bashrc" ]; then
+  touch ~/.bashrc
+fi
+bashrc=~/.bashrc
+zshrc=~/.zshrc
+printf "\e[36mHint\e[0m: Setup terminal colors, see http://misc.flogisoft.com/bash/tip_colors_and_formatting\n"
+printf "\e[36mHint\e[0m: Setup .bashrc and .zshrc, see provisioning.bashrc.txt\n\n"
+printf "\e[41mThis add the complete provisioning.bashrc.txt to the end of your current ~/.bashrc and ~/.zshrc!\e[0m\n\n"
+read -p "Are you sure?" -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]
+  then
+    cat provisioning.bashrc.txt >> $bashrc
+    cat provisioning.bashrc.txt >> $zshrc
+  else
+    printf "\e[36mSkipping ~/.bashrc and ~/.zshrc\e[0m...\n"
+fi
+
 
 printf '
                                           Thank you for using
