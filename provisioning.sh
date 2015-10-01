@@ -48,21 +48,21 @@ TARGET_MAC_RELEASE=10
 
 
 # Setup .bash_profile
-if [ ! -f "~/.bash_profile" ]; then
-  touch ~/.bash_profile
+if [ ! -f "~/.bashrc" ]; then
+  touch ~/.bashrc
 fi
-bashprofile=~/.bash_profile
+bashrc=~/.bashrc
 printf "\e[36mHint\e[0m: Setup terminal colors, see http://misc.flogisoft.com/bash/tip_colors_and_formatting\n"
-printf "\e[36mHint\e[0m: Setup bash_profile, see provisioning.bash_profile.txt\n\n"
-printf "\e[41mThis will overwrite your current ~/.bash_profile!\e[0m\n\n"
+printf "\e[36mHint\e[0m: Setup .bashrc, see provisioning.bashrc.txt\n\n"
+printf "\e[41mThis will overwrite your current ~/.bashrc!\e[0m\n\n"
 read -p "Are you sure?" -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
   then
-    cat "provisioning.bash_profile.txt" > $bashprofile
-    source $bashprofile
+    cat "provisioning.bashrc.txt" > $bashrc
+    source $bashrc
   else
-    printf "\e[36mSkipping ~/.bash_profile\e[0m...\n"
+    printf "\e[36mSkipping ~/.bashrc\e[0m...\n"
 fi
 
 
@@ -114,9 +114,9 @@ sudo gem install rails --no-rdoc --no-ri
 # Python Pip
 printf "\n\e[35mInstalling pips\e[0m:\n"
 ## Ansible
-sudo easy_install pip
-sudo pip install ansible
-sudo pip install thefuck
+sudo -H easy_install pip
+sudo -H pip install ansible
+sudo -H pip install thefuck
 
 
 # Homebrew 
@@ -311,7 +311,6 @@ app_install "$APP_Transmission" "$DMG_Transmission" "$VOL_Transmission"
 # Install zshell (oh my zsh)
 printf "\n\e[35mInstalling oh my zsh\e[0m:\n"
 curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
-upgrade_oh_my_zsh
 
 printf '
                                           Thank you for using
