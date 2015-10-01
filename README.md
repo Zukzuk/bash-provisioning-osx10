@@ -72,6 +72,7 @@ Only tested on my own macbook, with OSX Yosemite 10.10.5
  - [Jenkins](https://jenkins-ci.org/)
  - [SourceTree](https://www.sourcetreeapp.com/)
  - [VirtualBox](https://www.virtualbox.org/)
+ - [Slack](https://slack.com/)
  - [GitHub](https://github.com/)
  - [Heroku](https://www.heroku.com/)
  - [Transmit](https://panic.com/transmit/)

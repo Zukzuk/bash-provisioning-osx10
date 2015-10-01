@@ -162,8 +162,6 @@ brew cask install heroku-toolbelt
 brew cask install transmit
 ## Sequel pro
 brew cask install sequel-pro
-## Inky
-brew cask install inky
 ## VLC
 brew cask install vlc
 ## UnArchiver
