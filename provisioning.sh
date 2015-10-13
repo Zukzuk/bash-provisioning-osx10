@@ -211,6 +211,10 @@ function npm_install {
   fi
 }
 ls $NODE_MODULES
+## Nvm
+npm_install "nvm"
+## Npm check updates
+npm_install "npm-check-updates"
 ## Express
 npm_install "express"
 ## Lodash

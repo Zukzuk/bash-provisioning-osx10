@@ -90,6 +90,7 @@ Only tested on my own macbook, with OSX Yosemite 10.10.5
 #### NPM packages
 
  - [NVM](https://www.npmjs.com/package/nvm)
+ - [NPM-check-updates](https://www.npmjs.com/package/npm-check-updates)
  - [Express](https://www.npmjs.com/package/express)
  - [Lodash](https://www.npmjs.com/package/lodash)
  - [Socket-io](https://www.npmjs.com/package/socket.io)
