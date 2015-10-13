@@ -61,6 +61,7 @@ Only tested on my own macbook, with OSX Yosemite 10.10.5
  - [Opera](http://www.opera.com)
  - [iTerm2](https://www.iterm2.com/)
  - [Sublime Text 3](http://www.sublimetext.com/3)
+ - [Slack](https://slack.com/)
  - [Atom](https://atom.io/)
  - [Light-table](http://lighttable.com/)
  - [WebStorm](https://www.jetbrains.com/webstorm/)
@@ -88,6 +89,7 @@ Only tested on my own macbook, with OSX Yosemite 10.10.5
 
 #### NPM packages
 
+ - [NVM](https://www.npmjs.com/package/nvm)
  - [Express](https://www.npmjs.com/package/express)
  - [Lodash](https://www.npmjs.com/package/lodash)
  - [Socket-io](https://www.npmjs.com/package/socket.io)

@@ -8,6 +8,7 @@
 clear
 
 printf '
+
                                           Thank you for trying:
 \e[36m
                          _______  __   __  ___   _  _______  __   __  ___   _                                
@@ -144,6 +145,8 @@ if [ ! -f "/usr/local/bin/subl" ]
   then 
 	ln -s "~/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl 
 fi
+## Slack
+brew cask install slack
 ## Atom
 brew cask install atom
 ## Light-table
@@ -340,7 +343,7 @@ printf '
   |___| |_|  |__||_______||_______||___|  |_||___|    |_______||___|  |_||__| |__|  |___|  |_______||______| 
 
 
-                                      "All your provisioning provided"
+                                  "All your provisioning are belong to us"
 '
 
 
