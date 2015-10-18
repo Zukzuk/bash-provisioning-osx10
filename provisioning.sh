@@ -138,6 +138,8 @@ brew cask install opera
 ## iTerm2
 brew cask install iterm2
 printf "\e[36mHint\e[0m: Setup 'word-skipping', see http://stackoverflow.com/questions/81272/is-there-any-way-in-the-os-x-terminal-to-move-the-cursor-word-by-word\n"
+## namebench
+brew cask install namebench
 ## Sublime Text 3
 brew cask install sublime-text3
 ## Symlink subl to open files from terminal
@@ -145,12 +147,8 @@ if [ ! -f "/usr/local/bin/subl" ]
   then 
 	ln -s "~/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl 
 fi
-## Slack
-brew cask install slack
 ## Atom
 brew cask install atom
-## Light-table
-brew cask install lighttable
 ## WebStorm
 brew cask install webstorm
 ## pycharm
@@ -185,6 +183,8 @@ brew cask install vlc
 brew cask install the-unarchiver
 ## Handbrake
 brew cask install handbrake
+## Slack
+brew cask install slack
 ## Skype
 brew cask install skype
 ## Spotify
