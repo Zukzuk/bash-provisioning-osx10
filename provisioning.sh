@@ -85,7 +85,6 @@ printf "\n\e[35mInstall XCode and all other AppStore apps manually\e[0m...\n"
 read -p "Press [Enter] to continue when you're done..."
 printf "\n\e[35mUpdating XCode\e[0m:\n"
 xcode-select --install
-sudo xcodebuild -license
 
 
 # Ruby Gems
@@ -125,8 +124,6 @@ brew upgrade brew-cask
 brew tap caskroom/versions
 ## Java
 brew cask install java
-## Little snitch
-brew cask install little-snitch
 ## Google Chrome
 brew cask install google-chrome
 brew cask install google-chrome-canary
@@ -176,8 +173,8 @@ brew cask install virtualbox
 brew cask install github-desktop
 ## Heroku
 brew cask install heroku-toolbelt
-## Transmit
-brew cask install transmit
+## FileZilla
+brew cask install filezilla
 ## Sequel pro
 brew cask install sequel-pro
 ## VLC
@@ -289,13 +286,13 @@ function loop {
     eval $i
   done
 }
-## Transmission
-URL_Transmission="http://download.transmissionbt.com/files"
-DMG_Transmission="Transmission-2.84.dmg"
-VOL_Transmission="/Volumes/Transmission"
-APP_Transmission="Transmission.app"
-app_download "$DMG_Transmission" "$URL_Transmission"
-app_install "$APP_Transmission" "$DMG_Transmission" "$VOL_Transmission"
+### Transmission
+#URL_Transmission="http://download.transmissionbt.com/files"
+#DMG_Transmission="Transmission-2.84.dmg"
+#VOL_Transmission="/Volumes/Transmission"
+#APP_Transmission="Transmission.app"
+#app_download "$DMG_Transmission" "$URL_Transmission"
+#app_install "$APP_Transmission" "$DMG_Transmission" "$VOL_Transmission"
 
 
 # Install zshell (oh my zsh)

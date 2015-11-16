@@ -52,7 +52,6 @@ Only tested on my own macbook, with OSX Yosemite 10.10.5
 #### Homebrew casks
 
  - [Java](https://www.java.com/en/download/)
- - [Little Snitch](https://www.obdev.at/products/littlesnitch/index.html)
  - [Google Chrome](https://www.google.nl/chrome/browser/desktop/)
  - [Google Chrome Canary](https://www.google.nl/chrome/browser/canary.html)
  - [Chrome Remote Desktop](https://chrome.google.com/webstore/detail/chrome-remote-desktop/gbchcmhmhahfdphkhkmpfmihenigjmpp?hl=nl)
@@ -72,13 +71,11 @@ Only tested on my own macbook, with OSX Yosemite 10.10.5
  - [Jenkins](https://jenkins-ci.org/)
  - [SourceTree](https://www.sourcetreeapp.com/)
  - [VirtualBox](https://www.virtualbox.org/)
- - [Slack](https://slack.com/)
  - [GitHub](https://github.com/)
  - [Heroku](https://www.heroku.com/)
- - [Transmit](https://panic.com/transmit/)
+ - [FileZilla](https://filezilla-project.org/)
  - [Sequel pro](http://www.sequelpro.com/)
  - [VLC](http://www.videolan.org/vlc/)
- - [Inky](http://inky.com/)
  - [The Unarchiver](http://unarchiver.c3.cx/unarchiver)
  - [Handbrake](https://handbrake.fr/)
  - [Slack](https://slack.com/)
@@ -112,8 +109,5 @@ Only tested on my own macbook, with OSX Yosemite 10.10.5
  - [Karma](https://www.npmjs.com/package/karma)
  - [Karma-cli](https://www.npmjs.com/package/karma-cli)
  - [Protractor](https://www.npmjs.com/package/protractor)
+ - [Nightwatch](https://www.npmjs.com/package/nightwatch)
  - [Babel](https://www.npmjs.com/package/babel)
-
-#### Scripted installs
-
- - [Transmission](http://download.transmissionbt.com)
