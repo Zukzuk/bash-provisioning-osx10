@@ -85,6 +85,7 @@ printf "\n\e[35mInstall XCode and all other AppStore apps manually\e[0m...\n"
 read -p "Press [Enter] to continue when you're done..."
 printf "\n\e[35mUpdating XCode\e[0m:\n"
 xcode-select --install
+sudo xcodebuild -license
 
 
 # Ruby Gems
@@ -159,6 +160,8 @@ brew cask install phpstorm
 brew cask install macvim
 ## Charles
 brew cask install charles
+### http://xquartz.macosforge.org/landing/
+### https://www.wireshark.org/
 ## Vagrant
 brew cask install vagrant
 printf "\e[36mHint\e[0m: Setup IE vm's, see https://dev.modern.ie/tools/vms/mac/\n"
