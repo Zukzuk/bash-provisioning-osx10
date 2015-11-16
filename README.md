@@ -3,9 +3,9 @@ An idempotent bash provisioning script that will transform your mac into a devel
 
 ## Run
 Simply run ```bash provisioning.sh``` in your terminal and watch it goooooooo. 
-You can also run ```source provisioning.sh``` to immediatley source the new bash_profile into the terminal instance.
+You can also run ```source provisioning.sh``` to immediately source the new bash_profile into the terminal instance.
 
-Only tested on my own macbook, with OSX Yosemite 10.10.5
+Only tested on my own macbook, with OSX 10.10 and up
 
 ## Currently the following list is provisioned:
 
