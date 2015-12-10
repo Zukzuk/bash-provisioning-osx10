@@ -297,8 +297,7 @@ function loop {
 
 # Install zshell (oh my zsh)
 printf "\n\e[35mInstalling oh my zsh\e[0m:\n"
-curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
-zsh
+curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh zsh
 
 
 # Setup ~/.*rc
