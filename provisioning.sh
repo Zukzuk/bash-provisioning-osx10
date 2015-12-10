@@ -145,8 +145,6 @@ if [ ! -f "/usr/local/bin/subl" ]
   then 
 	ln -s "~/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl 
 fi
-## Atom
-brew cask install atom
 ## WebStorm
 brew cask install webstorm
 ## pycharm
@@ -250,8 +248,6 @@ npm_install "bower"
 ## Karma
 npm_install "karma"
 npm_install "karma-cli"
-## Protractor
-npm_install "protractor"
 ## Babel
 npm_install "babel"
 
