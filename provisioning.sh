@@ -293,8 +293,7 @@ function loop {
 
 # Install zshell (oh my zsh)
 printf "\n\e[35mInstalling oh my zsh\e[0m:\n"
-curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh zsh
-
+curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh 
 
 # Setup ~/.*rc
 if [ ! -f "~/.bashrc" ]; then
@@ -315,6 +314,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]
     printf "\e[36mSkipping ~/.bashrc and ~/.zshrc\e[0m...\n"
 fi
 
+zsh
 
 printf '
                                           Thank you for using
