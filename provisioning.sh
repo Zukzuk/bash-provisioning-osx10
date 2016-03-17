@@ -40,6 +40,7 @@ printf '
 
 
 # Constants
+HOME="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 BASE=~/Documents/provisioning
 APPS=~/Applications
 NODE_MODULES=/usr/local/lib/node_modules
@@ -78,6 +79,7 @@ else
   printf "Provisioning dir exists\n"
 fi
 cd $BASE
+cp -R "$HOME/provisioning.bashrc.txt" .
 
 
 # Update XCode
@@ -136,8 +138,6 @@ brew cask install opera
 ## iTerm2
 brew cask install iterm2
 printf "\e[36mHint\e[0m: Setup 'word-skipping', see http://stackoverflow.com/questions/81272/is-there-any-way-in-the-os-x-terminal-to-move-the-cursor-word-by-word\n"
-## namebench
-brew cask install namebench
 ## Sublime Text 3
 brew cask install sublime-text3
 ## Symlink subl to open files from terminal
@@ -167,6 +167,8 @@ printf "\e[36mHint\e[0m: Runs Jenkins on http://localhost:8080/\n"
 brew cask install sourcetree
 ## VirtualBox
 brew cask install virtualbox
+## pgAdmin3
+brew cask install pgadmin3
 ## GitHub
 brew cask install github-desktop
 ## Heroku
@@ -175,6 +177,8 @@ brew cask install heroku-toolbelt
 brew cask install filezilla
 ## Sequel pro
 brew cask install sequel-pro
+## PSequel
+brew cask install psequel
 ## VLC
 brew cask install vlc
 ## UnArchiver
@@ -183,14 +187,22 @@ brew cask install the-unarchiver
 brew cask install handbrake
 ## Slack
 brew cask install slack
+## uTorrent
+brew cask install utorrent
 ## Skype
 brew cask install skype
 ## Spotify
 brew cask install spotify
 ## MS Office
 brew cask install microsoft-office
+## Open Office
+brew cask install openoffice
 ## Clean my mac
 brew cask install cleanmymac
+## GOG Galaxy
+brew cask install gog-galaxy
+## Steam
+brew cask install steam
 
 
 # Brewery cleanup
@@ -315,6 +327,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]
 fi
 
 zsh
+cd $HOME
 
 printf '
                                           Thank you for using
