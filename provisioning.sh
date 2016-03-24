@@ -40,7 +40,7 @@ printf '
 
 
 # Constants
-HOME="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 BASE=~/Documents/provisioning
 APPS=~/Applications
 NODE_MODULES=/usr/local/lib/node_modules
@@ -68,6 +68,7 @@ ruby --version
 curl --version
 gem --version | sed "s/^/Gem /"
 openssl version
+
 ## Create provisioning dir
 printf "\n\e[35mCreate provisioning dir\e[0m:\n"
 cd ~/Documents
@@ -79,7 +80,7 @@ else
   printf "Provisioning dir exists\n"
 fi
 cd $BASE
-cp -R "$HOME/provisioning.bashrc.txt" .
+cp -R "$DIR/provisioning.bashrc.txt" .
 
 
 # Update XCode
@@ -96,9 +97,11 @@ sudo gem install rails --no-rdoc --no-ri
 
 # Python Pip
 printf "\n\e[35mInstalling pips\e[0m:\n"
-## Ansible
 sudo -H easy_install pip
+sudo pip install --upgrade pip
+## Ansible
 sudo -H pip install ansible
+## TheFuck
 sudo -H pip install thefuck
 
 
@@ -129,6 +132,7 @@ brew cask install java
 ## Google Chrome
 brew cask install google-chrome
 brew cask install google-chrome-canary
+## Chrome Remote Desktop
 brew cask install chrome-remote-desktop-host
 ## Mozilla Firefox
 brew cask install firefox
@@ -153,10 +157,6 @@ brew cask install pycharm
 brew cask install phpstorm
 ## MacVim
 brew cask install macvim
-## Charles
-brew cask install charles
-### http://xquartz.macosforge.org/landing/
-### https://www.wireshark.org/
 ## Vagrant
 brew cask install vagrant
 printf "\e[36mHint\e[0m: Setup IE vm's, see https://dev.modern.ie/tools/vms/mac/\n"
@@ -169,16 +169,10 @@ brew cask install sourcetree
 brew cask install virtualbox
 ## pgAdmin3
 brew cask install pgadmin3
-## GitHub
-brew cask install github-desktop
-## Heroku
-brew cask install heroku-toolbelt
 ## FileZilla
 brew cask install filezilla
 ## Sequel pro
 brew cask install sequel-pro
-## PSequel
-brew cask install psequel
 ## VLC
 brew cask install vlc
 ## UnArchiver
@@ -327,7 +321,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]
 fi
 
 zsh
-cd $HOME
+cd $DIR
 
 printf '
                                           Thank you for using
